@@ -8124,7 +8124,7 @@ var translationMap = {
 var entry = {
   name: 'Xcratch Example',
   extensionId: 'xcratchExample',
-  extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
+  extensionURL: 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs',
   collaborator: 'Yengawa Lab',
   iconURL: img$1,
   insetIconURL: img,
@@ -8789,16 +8789,16 @@ var formatMessageParse = createCommonjsModule(function (module, exports) {
 });
 
 // @flow
-var LONG$1 = 'long';
-var SHORT$1 = 'short';
-var NARROW$1 = 'narrow';
-var NUMERIC$1 = 'numeric';
-var TWODIGIT$1 = '2-digit';
+var LONG = 'long';
+var SHORT = 'short';
+var NARROW = 'narrow';
+var NUMERIC = 'numeric';
+var TWODIGIT = '2-digit';
 /**
  * formatting information
  **/
 
-var formatMessageFormats$1 = {
+var formatMessageFormats = {
   number: {
     decimal: {
       style: 'decimal'
@@ -8820,58 +8820,58 @@ var formatMessageFormats$1 = {
   },
   date: {
     short: {
-      month: NUMERIC$1,
-      day: NUMERIC$1,
-      year: TWODIGIT$1
+      month: NUMERIC,
+      day: NUMERIC,
+      year: TWODIGIT
     },
     medium: {
-      month: SHORT$1,
-      day: NUMERIC$1,
-      year: NUMERIC$1
+      month: SHORT,
+      day: NUMERIC,
+      year: NUMERIC
     },
     long: {
-      month: LONG$1,
-      day: NUMERIC$1,
-      year: NUMERIC$1
+      month: LONG,
+      day: NUMERIC,
+      year: NUMERIC
     },
     full: {
-      month: LONG$1,
-      day: NUMERIC$1,
-      year: NUMERIC$1,
-      weekday: LONG$1
+      month: LONG,
+      day: NUMERIC,
+      year: NUMERIC,
+      weekday: LONG
     },
     default: {
-      month: SHORT$1,
-      day: NUMERIC$1,
-      year: NUMERIC$1
+      month: SHORT,
+      day: NUMERIC,
+      year: NUMERIC
     }
   },
   time: {
     short: {
-      hour: NUMERIC$1,
-      minute: NUMERIC$1
+      hour: NUMERIC,
+      minute: NUMERIC
     },
     medium: {
-      hour: NUMERIC$1,
-      minute: NUMERIC$1,
-      second: NUMERIC$1
+      hour: NUMERIC,
+      minute: NUMERIC,
+      second: NUMERIC
     },
     long: {
-      hour: NUMERIC$1,
-      minute: NUMERIC$1,
-      second: NUMERIC$1,
-      timeZoneName: SHORT$1
+      hour: NUMERIC,
+      minute: NUMERIC,
+      second: NUMERIC,
+      timeZoneName: SHORT
     },
     full: {
-      hour: NUMERIC$1,
-      minute: NUMERIC$1,
-      second: NUMERIC$1,
-      timeZoneName: SHORT$1
+      hour: NUMERIC,
+      minute: NUMERIC,
+      second: NUMERIC,
+      timeZoneName: SHORT
     },
     default: {
-      hour: NUMERIC$1,
-      minute: NUMERIC$1,
-      second: NUMERIC$1
+      hour: NUMERIC,
+      minute: NUMERIC,
+      second: NUMERIC
     }
   },
   duration: {
@@ -8958,57 +8958,57 @@ var formatMessageFormats$1 = {
 
       switch (current) {
         case 'G':
-          options.era = n === 5 ? NARROW$1 : n === 4 ? LONG$1 : SHORT$1;
+          options.era = n === 5 ? NARROW : n === 4 ? LONG : SHORT;
           break;
 
         case 'y':
         case 'Y':
-          options.year = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.year = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 'M':
         case 'L':
           n = Math.min(Math.max(n - 1, 0), 4);
-          options.month = [NUMERIC$1, TWODIGIT$1, SHORT$1, LONG$1, NARROW$1][n];
+          options.month = [NUMERIC, TWODIGIT, SHORT, LONG, NARROW][n];
           break;
 
         case 'E':
         case 'e':
         case 'c':
-          options.weekday = n === 5 ? NARROW$1 : n === 4 ? LONG$1 : SHORT$1;
+          options.weekday = n === 5 ? NARROW : n === 4 ? LONG : SHORT;
           break;
 
         case 'd':
         case 'D':
-          options.day = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.day = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 'h':
         case 'K':
           options.hour12 = true;
-          options.hour = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.hour = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 'H':
         case 'k':
           options.hour12 = false;
-          options.hour = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.hour = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 'm':
-          options.minute = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.minute = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 's':
         case 'S':
-          options.second = n === 2 ? TWODIGIT$1 : NUMERIC$1;
+          options.second = n === 2 ? TWODIGIT : NUMERIC;
           break;
 
         case 'z':
         case 'Z':
         case 'v':
         case 'V':
-          options.timeZoneName = n === 1 ? SHORT$1 : LONG$1;
+          options.timeZoneName = n === 1 ? SHORT : LONG;
           break;
       }
     }
@@ -9020,7 +9020,7 @@ var formatMessageFormats$1 = {
 // @flow
 // "lookup" algorithm http://tools.ietf.org/html/rfc4647#section-3.4
 // assumes normalized language tags, and matches in a case sensitive manner
-var lookupClosestLocale$1 = function lookupClosestLocale(locale
+var lookupClosestLocale = function lookupClosestLocale(locale
 /*: string | string[] | void */
 , available
 /*: { [string]: any } */
@@ -9365,6 +9365,13 @@ var f = [function (s
 /*: Rule */
 {
   var n = +s;
+  return n === 1 || n === 11 ? one : n === 2 || n === 12 ? two : n === 3 || n === 13 ? few : other;
+}, function (s
+/*: string | number */
+)
+/*: Rule */
+{
+  var n = +s;
   return n === 1 ? one : n === 2 || n === 3 ? two : n === 4 ? few : n === 6 ? many : other;
 }, function (s
 /*: string | number */
@@ -9598,7 +9605,8 @@ var plurals = {
     ordinal: f[0]
   },
   gd: {
-    cardinal: f[15]
+    cardinal: f[15],
+    ordinal: f[40]
   },
   gl: {
     cardinal: f[4]
@@ -9608,7 +9616,7 @@ var plurals = {
   },
   gu: {
     cardinal: f[2],
-    ordinal: f[40]
+    ordinal: f[41]
   },
   guw: {
     cardinal: f[1]
@@ -9627,7 +9635,7 @@ var plurals = {
   },
   hi: {
     cardinal: f[2],
-    ordinal: f[40]
+    ordinal: f[41]
   },
   hr: {
     cardinal: f[7]
@@ -9637,11 +9645,14 @@ var plurals = {
   },
   hu: {
     cardinal: f[0],
-    ordinal: f[41]
+    ordinal: f[42]
   },
   hy: {
     cardinal: f[12],
     ordinal: f[0]
+  },
+  ia: {
+    cardinal: f[4]
   },
   io: {
     cardinal: f[4]
@@ -9651,7 +9662,7 @@ var plurals = {
   },
   it: {
     cardinal: f[4],
-    ordinal: f[42]
+    ordinal: f[43]
   },
   iu: {
     cardinal: f[19]
@@ -9670,7 +9681,7 @@ var plurals = {
   },
   ka: {
     cardinal: f[0],
-    ordinal: f[43]
+    ordinal: f[44]
   },
   kab: {
     cardinal: f[12]
@@ -9683,7 +9694,7 @@ var plurals = {
   },
   kk: {
     cardinal: f[0],
-    ordinal: f[44]
+    ordinal: f[45]
   },
   kkj: {
     cardinal: f[0]
@@ -9741,7 +9752,7 @@ var plurals = {
   },
   mk: {
     cardinal: f[24],
-    ordinal: f[45]
+    ordinal: f[46]
   },
   ml: {
     cardinal: f[0]
@@ -9755,7 +9766,7 @@ var plurals = {
   },
   mr: {
     cardinal: f[2],
-    ordinal: f[46]
+    ordinal: f[47]
   },
   mt: {
     cardinal: f[26]
@@ -9774,7 +9785,7 @@ var plurals = {
   },
   ne: {
     cardinal: f[0],
-    ordinal: f[47]
+    ordinal: f[48]
   },
   nl: {
     cardinal: f[4]
@@ -9805,7 +9816,7 @@ var plurals = {
   },
   or: {
     cardinal: f[0],
-    ordinal: f[48]
+    ordinal: f[49]
   },
   os: {
     cardinal: f[0]
@@ -9850,9 +9861,13 @@ var plurals = {
   saq: {
     cardinal: f[0]
   },
+  sc: {
+    cardinal: f[4],
+    ordinal: f[43]
+  },
   scn: {
     cardinal: f[4],
-    ordinal: f[42]
+    ordinal: f[43]
   },
   sd: {
     cardinal: f[0]
@@ -9904,7 +9919,7 @@ var plurals = {
   },
   sq: {
     cardinal: f[0],
-    ordinal: f[49]
+    ordinal: f[50]
   },
   sr: {
     cardinal: f[7]
@@ -9920,7 +9935,7 @@ var plurals = {
   },
   sv: {
     cardinal: f[4],
-    ordinal: f[50]
+    ordinal: f[51]
   },
   sw: {
     cardinal: f[4]
@@ -9945,7 +9960,7 @@ var plurals = {
   },
   tk: {
     cardinal: f[0],
-    ordinal: f[51]
+    ordinal: f[52]
   },
   tl: {
     cardinal: f[13],
@@ -9968,7 +9983,7 @@ var plurals = {
   },
   uk: {
     cardinal: f[29],
-    ordinal: f[52]
+    ordinal: f[53]
   },
   ur: {
     cardinal: f[4]
@@ -10179,7 +10194,7 @@ var formatMessageInterpret = createCommonjsModule(function (module, exports) {
   /*: Locales */
   ) {
     var style = element[2];
-    var options = formatMessageFormats$1.number[style] || formatMessageFormats$1.parseNumberPattern(style) || formatMessageFormats$1.number.default;
+    var options = formatMessageFormats.number[style] || formatMessageFormats.parseNumberPattern(style) || formatMessageFormats.number.default;
     return new Intl.NumberFormat(locales, options).format;
   }
 
@@ -10189,7 +10204,7 @@ var formatMessageInterpret = createCommonjsModule(function (module, exports) {
   /*: Locales */
   ) {
     var style = element[2];
-    var options = formatMessageFormats$1.duration[style] || formatMessageFormats$1.duration.default;
+    var options = formatMessageFormats.duration[style] || formatMessageFormats.duration.default;
     var fs = new Intl.NumberFormat(locales, options.seconds).format;
     var fm = new Intl.NumberFormat(locales, options.minutes).format;
     var fh = new Intl.NumberFormat(locales, options.hours).format;
@@ -10212,7 +10227,7 @@ var formatMessageInterpret = createCommonjsModule(function (module, exports) {
   ) {
     var type = element[1];
     var style = element[2];
-    var options = formatMessageFormats$1[type][style] || formatMessageFormats$1.parseDatePattern(style) || formatMessageFormats$1[type].default;
+    var options = formatMessageFormats[type][style] || formatMessageFormats.parseDatePattern(style) || formatMessageFormats[type].default;
     return new Intl.DateTimeFormat(locales, options).format;
   }
 
@@ -10232,7 +10247,7 @@ var formatMessageInterpret = createCommonjsModule(function (module, exports) {
         type: pluralType
       });
     } else {
-      var locale = lookupClosestLocale$1(locales, plurals);
+      var locale = lookupClosestLocale(locales, plurals);
       var select = locale && plurals[locale][pluralType] || returnOther;
       pluralRules = {
         select: select
@@ -10280,259 +10295,6 @@ var formatMessageInterpret = createCommonjsModule(function (module, exports) {
   };
   exports.types = defaults;
 });
-
-// @flow
-// "lookup" algorithm http://tools.ietf.org/html/rfc4647#section-3.4
-// assumes normalized language tags, and matches in a case sensitive manner
-var lookupClosestLocale = function lookupClosestLocale(locale
-/*: string | string[] | void */
-, available
-/*: { [string]: any } */
-)
-/*: ?string */
-{
-  if (typeof locale === 'string' && available[locale]) return locale;
-  var locales = [].concat(locale || []);
-
-  for (var l = 0, ll = locales.length; l < ll; ++l) {
-    var current = locales[l].split('-');
-
-    while (current.length) {
-      var candidate = current.join('-');
-      if (available[candidate]) return candidate;
-      current.pop();
-    }
-  }
-};
-
-// @flow
-var LONG = 'long';
-var SHORT = 'short';
-var NARROW = 'narrow';
-var NUMERIC = 'numeric';
-var TWODIGIT = '2-digit';
-/**
- * formatting information
- **/
-
-var formatMessageFormats = {
-  number: {
-    decimal: {
-      style: 'decimal'
-    },
-    integer: {
-      style: 'decimal',
-      maximumFractionDigits: 0
-    },
-    currency: {
-      style: 'currency',
-      currency: 'USD'
-    },
-    percent: {
-      style: 'percent'
-    },
-    default: {
-      style: 'decimal'
-    }
-  },
-  date: {
-    short: {
-      month: NUMERIC,
-      day: NUMERIC,
-      year: TWODIGIT
-    },
-    medium: {
-      month: SHORT,
-      day: NUMERIC,
-      year: NUMERIC
-    },
-    long: {
-      month: LONG,
-      day: NUMERIC,
-      year: NUMERIC
-    },
-    full: {
-      month: LONG,
-      day: NUMERIC,
-      year: NUMERIC,
-      weekday: LONG
-    },
-    default: {
-      month: SHORT,
-      day: NUMERIC,
-      year: NUMERIC
-    }
-  },
-  time: {
-    short: {
-      hour: NUMERIC,
-      minute: NUMERIC
-    },
-    medium: {
-      hour: NUMERIC,
-      minute: NUMERIC,
-      second: NUMERIC
-    },
-    long: {
-      hour: NUMERIC,
-      minute: NUMERIC,
-      second: NUMERIC,
-      timeZoneName: SHORT
-    },
-    full: {
-      hour: NUMERIC,
-      minute: NUMERIC,
-      second: NUMERIC,
-      timeZoneName: SHORT
-    },
-    default: {
-      hour: NUMERIC,
-      minute: NUMERIC,
-      second: NUMERIC
-    }
-  },
-  duration: {
-    default: {
-      hours: {
-        minimumIntegerDigits: 1,
-        maximumFractionDigits: 0
-      },
-      minutes: {
-        minimumIntegerDigits: 2,
-        maximumFractionDigits: 0
-      },
-      seconds: {
-        minimumIntegerDigits: 2,
-        maximumFractionDigits: 3
-      }
-    }
-  },
-  parseNumberPattern: function parseNumberPattern(pattern
-  /*: ?string */
-  ) {
-    if (!pattern) return;
-    var options = {};
-    var currency = pattern.match(/\b[A-Z]{3}\b/i);
-    var syms = pattern.replace(/[^¤]/g, '').length;
-    if (!syms && currency) syms = 1;
-
-    if (syms) {
-      options.style = 'currency';
-      options.currencyDisplay = syms === 1 ? 'symbol' : syms === 2 ? 'code' : 'name';
-      options.currency = currency ? currency[0].toUpperCase() : 'USD';
-    } else if (pattern.indexOf('%') >= 0) {
-      options.style = 'percent';
-    }
-
-    if (!/[@#0]/.test(pattern)) return options.style ? options : undefined;
-    options.useGrouping = pattern.indexOf(',') >= 0;
-
-    if (/E\+?[@#0]+/i.test(pattern) || pattern.indexOf('@') >= 0) {
-      var size = pattern.replace(/E\+?[@#0]+|[^@#0]/gi, '');
-      options.minimumSignificantDigits = Math.min(Math.max(size.replace(/[^@0]/g, '').length, 1), 21);
-      options.maximumSignificantDigits = Math.min(Math.max(size.length, 1), 21);
-    } else {
-      var parts = pattern.replace(/[^#0.]/g, '').split('.');
-      var integer = parts[0];
-      var n = integer.length - 1;
-
-      while (integer[n] === '0') {
-        --n;
-      }
-
-      options.minimumIntegerDigits = Math.min(Math.max(integer.length - 1 - n, 1), 21);
-      var fraction = parts[1] || '';
-      n = 0;
-
-      while (fraction[n] === '0') {
-        ++n;
-      }
-
-      options.minimumFractionDigits = Math.min(Math.max(n, 0), 20);
-
-      while (fraction[n] === '#') {
-        ++n;
-      }
-
-      options.maximumFractionDigits = Math.min(Math.max(n, 0), 20);
-    }
-
-    return options;
-  },
-  parseDatePattern: function parseDatePattern(pattern
-  /*: ?string */
-  ) {
-    if (!pattern) return;
-    var options = {};
-
-    for (var i = 0; i < pattern.length;) {
-      var current = pattern[i];
-      var n = 1;
-
-      while (pattern[++i] === current) {
-        ++n;
-      }
-
-      switch (current) {
-        case 'G':
-          options.era = n === 5 ? NARROW : n === 4 ? LONG : SHORT;
-          break;
-
-        case 'y':
-        case 'Y':
-          options.year = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 'M':
-        case 'L':
-          n = Math.min(Math.max(n - 1, 0), 4);
-          options.month = [NUMERIC, TWODIGIT, SHORT, LONG, NARROW][n];
-          break;
-
-        case 'E':
-        case 'e':
-        case 'c':
-          options.weekday = n === 5 ? NARROW : n === 4 ? LONG : SHORT;
-          break;
-
-        case 'd':
-        case 'D':
-          options.day = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 'h':
-        case 'K':
-          options.hour12 = true;
-          options.hour = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 'H':
-        case 'k':
-          options.hour12 = false;
-          options.hour = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 'm':
-          options.minute = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 's':
-        case 'S':
-          options.second = n === 2 ? TWODIGIT : NUMERIC;
-          break;
-
-        case 'z':
-        case 'Z':
-        case 'v':
-        case 'V':
-          options.timeZoneName = n === 1 ? SHORT : LONG;
-          break;
-      }
-    }
-
-    return Object.keys(options).length ? options : undefined;
-  }
-};
 
 var formatMessage$1 = createCommonjsModule(function (module, exports) {
   /*::
@@ -10872,7 +10634,7 @@ var EXTENSION_ID = 'xcratchExample';
  * @type {string}
  */
 
-var extensionURL = 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs';
+var extensionURL = 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs';
 /**
  * Icon png to be displayed at the left edge of each extension block, encoded as a data URI.
  * @type {string}
@@ -10990,6 +10752,7 @@ var XcratchExampleBlocks = /*#__PURE__*/function () {
     }
     /**
      * Set URL to get this extension.
+     * extensionURL will be reset when the module is loaded from the web.
      * @param {string} url - URL
      */
     ,

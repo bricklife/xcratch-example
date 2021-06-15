@@ -16,8 +16,8 @@ const translationMap = {
 const entry = {
     name: 'Xcratch Example',
     extensionId: 'xcratchExample',
-    extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
-    collaborator: 'Yengawa Lab',
+    extensionURL: 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs',
+    collaborator: 'bricklife',
     iconURL: xcratchExampleIconURL,
     insetIconURL: xcratchExampleInsetIconURL,
     description: (
@@ -31,7 +31,7 @@ const entry = {
     disabled: false,
     bluetoothRequired: false,
     internetConnectionRequired: true,
-    helpLink: 'https://github.com/yokobond/xcratch-example/',
+    helpLink: 'https://github.com/bricklife/xcratch-example/',
     translationMap: translationMap
 };
 
