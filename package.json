@@ -5,7 +5,7 @@
   "scripts": {
     "setup:local": "node ./scripts/setup-local.js",
     "register": "node ./scripts/register.js --link -C --id=\"xcratchExample\" --gui=\"../scratch-gui\"",
-    "build": "rimraf ./dist && mkdirp ./dist && node ./scripts/build.js --name=xcratchExample --block=\"./src/block\" --entry=\"./src/entry\" --gui=\"../scratch-gui\" --output=\"./dist\"",
+    "build": "rimraf ./mjs && mkdirp ./mjs && node ./scripts/build.js --name=xcratchExample --block=\"./src/block\" --entry=\"./src/entry\" --gui=\"../scratch-gui\" --output=\"./mjs\"",
     "build:debug": "rimraf ./build && mkdirp ./build && node ./scripts/build.js --name=xcratchExample --block=\"./src/block\" --entry=\"./src/entry\" --gui=\"../scratch-gui\" --output=\"./build\" --debug",
     "startDevServer": "cd ../scratch-gui && npm run start -- --https"
   },

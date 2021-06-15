@@ -8125,7 +8125,7 @@ var entry = {
   name: 'Xcratch Example',
   extensionId: 'xcratchExample',
   extensionURL: 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs',
-  collaborator: 'Yengawa Lab',
+  collaborator: 'bricklife',
   iconURL: img$1,
   insetIconURL: img,
   description: /*#__PURE__*/react.createElement(FormattedMessage, {
@@ -8137,7 +8137,7 @@ var entry = {
   disabled: false,
   bluetoothRequired: false,
   internetConnectionRequired: true,
-  helpLink: 'https://github.com/yokobond/xcratch-example/',
+  helpLink: 'https://github.com/bricklife/xcratch-example/',
   translationMap: translationMap
 };
 
