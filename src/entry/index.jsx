@@ -16,7 +16,7 @@ const translationMap = {
 const entry = {
     name: 'Xcratch Example',
     extensionId: 'xcratchExample',
-    extensionURL: 'https://yokobond.github.io/xcratch-example/dist/xcratchExample.mjs',
+    extensionURL: 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs',
     collaborator: 'Yengawa Lab',
     iconURL: xcratchExampleIconURL,
     insetIconURL: xcratchExampleInsetIconURL,
