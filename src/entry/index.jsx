@@ -16,7 +16,7 @@ const translationMap = {
 const entry = {
     name: 'Xcratch Example',
     extensionId: 'xcratchExample',
-    extensionURL: 'https://bricklife.com/xcratch-example/dist/xcratchExample.mjs',
+    extensionURL: 'https://bricklife.com/xcratch-example/mjs/xcratchExample.mjs',
     collaborator: 'bricklife',
     iconURL: xcratchExampleIconURL,
     insetIconURL: xcratchExampleInsetIconURL,
